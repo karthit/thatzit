@@ -1,0 +1,15 @@
+<ion-view view-title="My Contacts">    
+  <ion-content>
+    <ion-list>
+      <ion-item  ng-repeat="user in contacts.contactUsers"
+                class="item-chat item-remove-animate item-avatar item-icon-right"
+                type="item-text-wrap"
+                ng-click="contacts.newChat(user._id)">
+        <img ng-src="{{ user.profile.picture }}">
+        <h2>{{ user.profile.name }}</h2>
+        <p>Oye! I am using ThatzIt.</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

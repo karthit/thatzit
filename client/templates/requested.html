@@ -1,0 +1,13 @@
+<ion-view view-title="Requested">    
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="user in requested.users"
+                class="item-chat item-remove-animate item-avatar item-icon-right"
+                type="item-text-wrap">
+        <img ng-src="{{ user.profile.picture }}">
+        <h2>{{ user.profile.name }}</h2>
+        <p>Oye! I am using ThatzIt.</p> 
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

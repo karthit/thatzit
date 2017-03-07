@@ -6,9 +6,13 @@ import chatsTemplateUrl from '../templates/chats.html';
 import chatTemplateUrl from '../templates/chat.html';
 import confirmationTemplateUrl from '../templates/confirmation.html';
 import loginTemplateUrl from '../templates/login.html';
+import regTemplateUrl from '../templates/register.html';
 import profileTemplateUrl from '../templates/profile.html';
 import settingsTemplateUrl from '../templates/settings.html';
 import tabsTemplateUrl from '../templates/tabs.html';
+import contactsTemplateUrl from '../templates/contacts.html';
+import requestedTemplateUrl from '../templates/requested.html';
+import requestsTemplateUrl from '../templates/requests.html';
 
 class RoutesConfig extends Config {
   constructor() {
@@ -53,6 +57,11 @@ class RoutesConfig extends Config {
         templateUrl: loginTemplateUrl,
         controller: 'LoginCtrl as logger'
       })
+      .state('register', {
+        url: '/register',
+        templateUrl: regTemplateUrl,
+        controller: 'RegisterCtrl as regs'
+      })      
       .state('confirmation', {
         url: '/confirmation/:phone',
         templateUrl: confirmationTemplateUrl,
@@ -74,7 +83,34 @@ class RoutesConfig extends Config {
             controller: 'SettingsCtrl as settings',
           }
         }
-      });
+      })
+      .state('tab.contacts', {
+         url: '/contacts',
+         views: {
+            'tab-contacts': {
+              templateUrl: contactsTemplateUrl,
+              controller: 'ContactsCtrl as contacts',
+            }
+         }
+       })
+       .state('tab.requested',{
+         url: '/requested',
+         views: {
+             'tab-requested':{
+                 templateUrl: requestedTemplateUrl,
+                 controller: 'RequestedCtrl as requested'
+             }
+         }
+       })
+       .state('tab.requests',{
+         url: '/requests',
+         views: {
+             'tab-requests':{
+                 templateUrl: requestsTemplateUrl,
+                 controller: 'RequestsCtrl as requests'
+             }
+         }
+       });
 
     this.$urlRouterProvider.otherwise('tab/chats');
   }

@@ -15,9 +15,13 @@ import ChatsCtrl from '../controllers/chats.controller';
 import ChatCtrl from '../controllers/chat.controller';
 import ConfirmationCtrl from '../controllers/confirmation.controller';
 import LoginCtrl from '../controllers/login.controller';
+import RegisterCtrl from '../controllers/register.controller';
 import NewChatCtrl from '../controllers/new-chat.controller';
 import ProfileCtrl from '../controllers/profile.controller';
 import SettingsCtrl from '../controllers/settings.controller';
+import ContactsCtrl from '../controllers/contacts.controller'
+import RequestedCtrl from '../controllers/requested.controller';
+import RequestsCtrl from '../controllers/requests.controller';
 import InputDirective from '../directives/input.directive';
 import CalendarFilter from '../filters/calendar.filter';
 import ChatNameFilter from '../filters/chat-name.filter';
@@ -40,6 +44,7 @@ new Loader(App)
   .load(ChatCtrl)
   .load(ConfirmationCtrl)
   .load(LoginCtrl)
+  .load(RegisterCtrl)
   .load(NewChatCtrl)
   .load(ProfileCtrl)
   .load(SettingsCtrl)
@@ -48,6 +53,9 @@ new Loader(App)
   .load(ChatNameFilter)
   .load(ChatPictureFilter)
   .load(NewChatService)
+  .load(ContactsCtrl)
+  .load(RequestedCtrl)
+  .load(RequestsCtrl)
   .load(Routes);
 
 // Startup

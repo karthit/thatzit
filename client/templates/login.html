@@ -1,15 +1,20 @@
-<ion-view title="Your phone number">
+<ion-view title="Login">
   <ion-nav-buttons side="right">
-    <button ng-click="logger.login()" ng-disabled="!logger.phone || logger.phone.length === 0" class="button button-clear button-positive">Done</button>
+    <button ng-click="logger.login()" ng-disabled="(!logger.email || logger.email.length === 0)&&(!logger.password || logger.password.length === 0)" class="button button-clear button-positive">Done</button>
   </ion-nav-buttons>
   <ion-content class="login">
     <div class="text-center instructions">
-      Please confirm your country code and enter your phone number
+      Login Here...
     </div>
     <div class="list">
       <label class="item item-input">
-        <input ng-model="logger.phone" on-return="logger.login()" type="text" placeholder="Your phone number">
+        <input ng-model="logger.email" type="text" placeholder="Email address">
       </label>
+      <label class="item item-input">
+        <input ng-model="logger.password" type="password" placeholder="Password">
+      </label>
+      <a class="item" ng-click="logger.login()">Login</a>
+      <a class="item" ng-click="logger.register()">Register here</a>
     </div>
   </ion-content>
 </ion-view>

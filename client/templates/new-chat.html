@@ -1,19 +1,28 @@
 <ion-modal-view ng-controller="NewChatCtrl as chat">
   <ion-header-bar>
-    <h1 class="title">New Chat</h1>
-    <div class="buttons">
-      <button class="button button-clear button-positive" ng-click="chat.hideNewChatModal()">Cancel</button>
-    </div>
+      <h1 class="title">Add Friends</h1>
+  </ion-header-bar>
+  <ion-header-bar class="bar-light bar-subheader">     
+      <div class="searchButtons">
+          <input class="searchButtons" ng-model="search" type="text" placeholder="Search Friends">  
+      </div>      
+      <div class="buttons">          
+          <button class="button button-clear button-positive" ng-click="chat.hideNewChatModal()">Close</button>      
+      </div>
   </ion-header-bar>
 
   <ion-content>
-    <div class="list">
-      <a ng-repeat="user in chat.users" ng-click="chat.newChat(user._id)" class="item">
-        <h2>{{ user.profile.name }}</h2>
-        <p>
-          Hey there! I am using meteor-Whatsapp with meteor.
-        </p>
-      </a>
-    </div>
+    <ion-searchbar></ion-searchbar>
+    <ion-list>
+        <ion-item ng-repeat="user in chat.users | filter:search" 
+                  class="item-chat item-remove-animate item-avatar item-icon-right"
+                  type="item-text-wrap"
+                  ng-click="chat.fireRequest(user._id)">
+            <img ng-src="{{ user.profile.picture }}">
+            <h2>{{ user.profile.name }}</h2>
+            <p>Oye! I am using ThatzIt.</p>
+            <i class="icon ion-plus-circled"></i>
+        </ion-item>
+    </ion-list>
   </ion-content>
 </ion-modal-view>

@@ -1,0 +1,21 @@
+<ion-view view-title="Requests">    
+  <ion-content>
+      <ion-list>
+        <ion-item ng-repeat="user in requests.users" class="item-button-right">
+          <div class="item-chat item-remove-animate item-avatar item-icon-right item-button-right">
+              <img ng-src="{{ user.profile.picture }}">
+              <h2>{{ user.profile.name }}</h2>
+              <h4> Oye! I am using ThatzIt.</h4>
+              <div class="buttons">
+                  <button class="button button-positive" ng-click="requests.acceptFriendRequest(user._id)">
+                      <i class="icon ion-checkmark-circled" style="position:initial !important"></i>
+                  </button>                
+                  <button class="button button-assertive">
+                      <i class="icon ion-close-circled" style="position:initial !important"></i>
+                  </button>
+              </div>
+            </div>
+        </ion-item>
+      </ion-list>
+  </ion-content>
+</ion-view>
