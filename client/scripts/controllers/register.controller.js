@@ -3,6 +3,7 @@ import { Accounts } from 'meteor/accounts-base';
 import { Controller } from 'angular-ecmascript/module-helpers';
 
 export default class RegisterCtrl extends Controller {
+      
   register() {
     if (_.isEmpty(this.firstname) && _.isEmpty(this.lastname) && _.isEmpty(this.mobile) && _.isEmpty(this.email) && _.isEmpty(this.password)){
       return;  

@@ -10,11 +10,13 @@ export default class NewChatCtrl extends Controller {
 
     this.helpers({
       users() {
-        var selectedWaffers =  Meteor.users.find({_id: this.currentUserId}, { "profile.contacts": 1 ,  _id: 0 }).fetch();
+        var selectedWaffers =  Meteor.users.find({_id: this.currentUserId}, { "profile.contacts": 1 , _id: 0 }).fetch();
+        var selectedWaffers2 = Meteor.users.find({_id: this.currentUserId}, { "profile.sentRequests": 1, _id:0}).fetch();
         if(selectedWaffers.length > 0)
             return Meteor.users.find({
                 $and:[ 
-                    {_id: {$nin: selectedWaffers[0].profile.contacts }}, 
+                    {_id: {$nin: selectedWaffers[0].profile.contacts }},
+                    {_id: {$nin: selectedWaffers2[0].profile.sentRequests }},
                     {_id: {$ne:this.currentUserId}} 
                 ]
             });

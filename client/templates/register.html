@@ -1,6 +1,7 @@
 <ion-view title="Register">
-  <ion-nav-buttons side="right">
-    <button ng-click="regs.register()" ng-disabled="(!regs.firstname || regs.firstname.length === 0)&&(!regs.lastname || regs.lastname.length === 0)&&(!regs.mobile || regs.mobile.length === 0)&&(!regs.email || regs.email.length === 0)&&(!regs.password || regs.password.length === 0)" class="button button-clear button-positive">Register</button>
+  <ion-nav-buttons side="right">      
+    <button ng-click="regs.register()" ng-disabled="!((!regs.firstname || regs.firstname.length === 0)==false && (!regs.lastname || regs.lastname.length === 0)==false &&(!regs.mobile || regs.mobile.length === 0)==false &&(!regs.email || regs.email.length === 0)==false &&(!regs.password || regs.password.length === 0)==false)" class="button button-clear button-positive">Register</button>
+      
   </ion-nav-buttons>
   <ion-content class="register"><br/>
     <div class="text-center instructions">
@@ -18,7 +19,7 @@
         <input ng-model="regs.mobile" type="text" placeholder="Mobile No. goes here">
       </label>
       <label class="item item-input">
-        <input ng-model="regs.email" type="text" placeholder="Email goes here">
+        <input ng-model="regs.email" type="email" placeholder="Email goes here">
       </label><br/>
       <label class="item item-input">
         <input ng-model="regs.password" on-return="regs.register()" type="password" placeholder="Password goes here">

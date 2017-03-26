@@ -11,7 +11,7 @@ export default class ProfileCtrl extends Controller {
   }
 
   updatePicture () {
-    MeteorCameraUI.getPicture({ width: 60, height: 60 }, (err, data) => {
+    MeteorCameraUI.getPicture({ quality:100 }, (err, data) => {
       if (err) return this.handleError(err);
 
       this.$ionicLoading.show({

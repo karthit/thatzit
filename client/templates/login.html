@@ -1,6 +1,6 @@
 <ion-view title="Login">
   <ion-nav-buttons side="right">
-    <button ng-click="logger.login()" ng-disabled="(!logger.email || logger.email.length === 0)&&(!logger.password || logger.password.length === 0)" class="button button-clear button-positive">Done</button>
+    <button ng-disabled="!((!logger.email || logger.email.length === 0)==false && (!logger.password || logger.password.length === 0)==false)" ng-click="logger.login()" ng-disabled="(!logger.email || logger.email.length === 0)&&(!logger.password || logger.password.length === 0)" class="button button-clear button-positive">Login</button>
   </ion-nav-buttons>
   <ion-content class="login">
     <div class="text-center instructions">
@@ -8,7 +8,7 @@
     </div>
     <div class="list">
       <label class="item item-input">
-        <input ng-model="logger.email" type="text" placeholder="Email address">
+        <input ng-model="logger.email" type="email" placeholder="Email address">
       </label>
       <label class="item item-input">
         <input ng-model="logger.password" type="password" placeholder="Password">
