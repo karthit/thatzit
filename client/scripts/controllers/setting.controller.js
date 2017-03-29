@@ -1,7 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { Controller } from 'angular-ecmascript/module-helpers';
 
-export default class SettingsCtrl extends Controller {
+export default class SettingCtrl extends Controller {
   logout() {
     Meteor.logout((err) => {
       if (err) return this.handleError(err);
@@ -20,4 +20,5 @@ export default class SettingsCtrl extends Controller {
   }
 }
 
-SettingsCtrl.$inject = ['$state', '$ionicPopup', '$log'];
+SettingCtrl.$name = 'SettingCtrl';
+SettingCtrl.$inject = ['$state', '$ionicPopup', '$log'];

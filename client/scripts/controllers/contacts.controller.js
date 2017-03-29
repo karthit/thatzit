@@ -46,4 +46,5 @@ export default class ContactsCtrl extends Controller {
   }
 }
 
+ContactsCtrl.$name = 'ContactsCtrl';
 ContactsCtrl.$inject = ['$state', 'NewChat','$ionicPopup', '$log'];

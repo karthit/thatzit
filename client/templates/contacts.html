@@ -1,4 +1,8 @@
-<ion-view view-title="My Contacts">    
+<ion-view view-title="My Contacts"> 
+  <ion-nav-buttons side="right">
+    <button ng-click="chats.showNewChatModal()" class="button ion-search button-icon"></button>
+  </ion-nav-buttons>
+    
   <ion-content>
     <ion-list>
       <ion-item  ng-repeat="user in contacts.contactUsers"

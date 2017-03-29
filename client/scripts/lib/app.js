@@ -18,7 +18,7 @@ import LoginCtrl from '../controllers/login.controller';
 import RegisterCtrl from '../controllers/register.controller';
 import NewChatCtrl from '../controllers/new-chat.controller';
 import ProfileCtrl from '../controllers/profile.controller';
-import SettingsCtrl from '../controllers/settings.controller';
+import SettingCtrl from '../controllers/setting.controller';
 import ContactsCtrl from '../controllers/contacts.controller'
 import RequestedCtrl from '../controllers/requested.controller';
 import RequestsCtrl from '../controllers/requests.controller';
@@ -47,15 +47,15 @@ new Loader(App)
   .load(RegisterCtrl)
   .load(NewChatCtrl)
   .load(ProfileCtrl)
-  .load(SettingsCtrl)
+  .load(SettingCtrl)
+  .load(ContactsCtrl)
+  .load(RequestedCtrl)
+  .load(RequestsCtrl)
   .load(InputDirective)
   .load(CalendarFilter)
   .load(ChatNameFilter)
   .load(ChatPictureFilter)
-  .load(NewChatService)
-  .load(ContactsCtrl)
-  .load(RequestedCtrl)
-  .load(RequestsCtrl)
+  .load(NewChatService)  
   .load(Routes);
 
 // Startup

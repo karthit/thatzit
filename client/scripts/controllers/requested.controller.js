@@ -46,4 +46,5 @@ export default class RequestedCtrl extends Controller {
   }
 }
 
+RequestedCtrl.$name = 'RequestedCtrl';
 RequestedCtrl.$inject = ['$state', 'NewChat','$ionicPopup', '$log'];

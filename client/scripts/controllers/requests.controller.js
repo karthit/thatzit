@@ -52,4 +52,5 @@ export default class RequestsCtrl extends Controller {
   }
 }
 
+RequestsCtrl.$name = 'RequestsCtrl';
 RequestsCtrl.$inject = ['$state', 'NewChat','$ionicPopup', '$log'];

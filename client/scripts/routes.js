@@ -8,7 +8,7 @@ import confirmationTemplateUrl from '../templates/confirmation.html';
 import loginTemplateUrl from '../templates/login.html';
 import regTemplateUrl from '../templates/register.html';
 import profileTemplateUrl from '../templates/profile.html';
-import settingsTemplateUrl from '../templates/settings.html';
+import settingsTemplateUrl from '../templates/setting.html';
 import tabsTemplateUrl from '../templates/tabs.html';
 import contactsTemplateUrl from '../templates/contacts.html';
 import requestedTemplateUrl from '../templates/requested.html';
@@ -75,12 +75,12 @@ class RoutesConfig extends Config {
             user: this.isAuthorized
         }
       })
-      .state('tab.settings', {
-        url: '/settings',
+      .state('tab.setting', {
+        url: '/setting',
         views: {
-          'tab-settings': {
+          'tab-setting': {
             templateUrl: settingsTemplateUrl,
-            controller: 'SettingsCtrl as settings',
+            controller: 'SettingCtrl as setting',
           }
         }
       })

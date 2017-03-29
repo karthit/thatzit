@@ -1,0 +1,17 @@
+<ion-view view-title="Setting">
+  <ion-nav-buttons side="right">
+    <button ng-click="chats.showNewChatModal()" class="button ion-search button-icon"></button>
+  </ion-nav-buttons>
+    
+  <ion-content>    
+    <ion-list>
+      <ion-item href="#/profile" class="item-icon-right">
+        Profile
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+      <div class="padding text-center">
+        <button ng-click="setting.logout()" class="button button-clear button-assertive">Logout</button>
+      </div>
+    </ion-list>
+  </ion-content>
+</ion-view>
