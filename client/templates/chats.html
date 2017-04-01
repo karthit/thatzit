@@ -8,7 +8,10 @@
       <ion-item ng-repeat="chat in chats.data | orderBy:'-lastMessage.timestamp'"
                 class="item-chat item-remove-animate item-avatar item-icon-right"
                 type="item-text-wrap"
-                href="#/tab/chats/{{ chat._id }}">
+                href="#/tab/chats/{{ chat._id }}"
+                can-swipe="true" 
+                swipe-direction="both"
+                on-swipe-left="chats.remove(chat)">
         <img ng-src="{{ chat | chatPicture }}">
         <h2>{{ chat | chatName }}</h2>
         <ng-switch on="chat.lastMessage.type">
@@ -16,10 +19,10 @@
           <p ng-switch-when="picture">image</p>
         </ng-switch>
         <span class="last-message-timestamp">{{ chat.lastMessage.timestamp | calendar }}</span>
-        <i class="icon ion-chevron-right icon-accessory"></i>
-        <ion-option-button class="button-assertive" ng-click="chats.remove(chat)">
+        <ion-option-button class="icon ion-ios-close-outline"></ion-option-button>
+        <!--<ion-option-button class="button-assertive" ng-click="chats.remove(chat)">
           Delete
-        </ion-option-button>
+        </ion-option-button>--> 
       </ion-item>
     </ion-list>
   </ion-content>
