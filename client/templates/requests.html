@@ -6,11 +6,11 @@
   <ion-content>
       <ion-list>
         <ion-item ng-repeat="user in requests.users" class="item-button-right">
-          <div class="item-chat item-remove-animate item-avatar item-icon-right item-button-right">
-              <img ng-src="{{ user.profile.picture }}">
+          <div class="item-chat item-remove-animate item-avatar item-icon-right item-button-right" style='min-height:inherit !important'>
+              <img ng-src="{{ user.profile.picture || '/user-default.svg' }} ">
               <h2>{{ user.profile.name }}</h2>
-              <h4> Oye! I am using ThatzIt.</h4>
-              <div class="buttons">
+              <p style="overflow:inherit !important"> Oye! I am using ThatzIt.</p>
+              <div class="buttons" style="margin-top:10px !important;">
                   <button class="button button-positive" ng-click="requests.acceptFriendRequest(user._id)">
                       <i class="icon ion-checkmark-circled" style="position:initial !important"></i>
                   </button>                

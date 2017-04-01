@@ -26,6 +26,7 @@ import InputDirective from '../directives/input.directive';
 import CalendarFilter from '../filters/calendar.filter';
 import ChatNameFilter from '../filters/chat-name.filter';
 import ChatPictureFilter from '../filters/chat-picture.filter';
+import NewChatPictureFilter from '../filters/new-chat.filter';
 import NewChatService from '../services/new-chat.service';
 import Routes from '../routes';
 
@@ -55,6 +56,7 @@ new Loader(App)
   .load(CalendarFilter)
   .load(ChatNameFilter)
   .load(ChatPictureFilter)
+  .load(NewChatPictureFilter)
   .load(NewChatService)  
   .load(Routes);
 
