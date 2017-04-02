@@ -37,6 +37,10 @@ export default class RequestsCtrl extends Controller {
     });
   }
     
+  showNewChatModal() {
+    this.NewChat.showModal();
+  }    
+    
   goToChat(chatId) {
     this.$state.go('tab.chat', { chatId });
   }

@@ -30,7 +30,11 @@ export default class ContactsCtrl extends Controller {
       this.goToChat(chatId);
     });
   }
-
+  
+  showNewChatModal() {
+    this.NewChat.showModal();
+  }
+    
   goToChat(chatId) {
     this.$state.go('tab.chat', { chatId });
   }
