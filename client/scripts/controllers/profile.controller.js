@@ -1,6 +1,7 @@
 import { _ } from 'meteor/underscore';
 import { MeteorCameraUI } from 'meteor/okland:camera-ui';
 import { Controller } from 'angular-ecmascript/module-helpers';
+import  Cropper from 'cropperjs';
 
 export default class ProfileCtrl extends Controller {
   constructor() {
@@ -8,23 +9,23 @@ export default class ProfileCtrl extends Controller {
 
     const profile = this.currentUser && this.currentUser.profile;
     this.name = profile ? profile.name : '';
+      
   }
-
+    
   updatePicture () {
-    MeteorCameraUI.getPicture({ quality:100 }, (err, data) => {
+    MeteorCameraUI.getPicture({quality:100 }, (err, data) => {
       if (err) return this.handleError(err);
 
       this.$ionicLoading.show({
         template: 'Updating picture...'
       });
 
-      this.callMethod('updatePicture', data, (err) => {
-        this.$ionicLoading.hide();
-        this.handleError(err);
-      });
+      sessionStorage.setItem('imageData',data);
+      this.$ionicLoading.hide();
+      this.imgcrop.showModal();   
     });
   }
-
+    
   updateName() {
     if (_.isEmpty(this.name)) return;
 
@@ -34,7 +35,6 @@ export default class ProfileCtrl extends Controller {
         if (err) return this.handleError(err);
         this.$state.go('tab.chats');
       });
-    
   }
 
   handleError(err) {
@@ -50,4 +50,4 @@ export default class ProfileCtrl extends Controller {
 }
 
 ProfileCtrl.$name = 'ProfileCtrl';
-ProfileCtrl.$inject = ['$state', '$ionicLoading', '$ionicPopup', '$log'];
+ProfileCtrl.$inject = ['$state', '$ionicLoading', '$ionicPopup', '$log','imgcrop'];

@@ -1,0 +1,33 @@
+<style>
+    .container {
+      max-width: 640px;
+      margin: 20px auto;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    /* Override Cropper's styles */
+    .cropper-view-box,
+    .cropper-face {
+      border-radius: 50%;
+    }
+</style>
+
+<ion-modal-view ng-controller="imgcropCtrl as crop">
+  <ion-header-bar>
+      <h1 class="title">Crop Picture</h1>
+  </ion-header-bar>
+  <ion-header-bar class="bar-light bar-subheader">     
+      <div class="buttons">          
+          <button class="button button-clear button-positive" ng-click="crop.cropIt()">Select</button>      
+      </div>
+  </ion-header-bar>
+
+  <ion-content>
+    <div>
+      <img id="image" src="" />
+    </div>
+  </ion-content>
+</ion-modal-view>

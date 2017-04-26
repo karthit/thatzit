@@ -5,6 +5,7 @@
 
   <ion-content class="profile">
     <a class="profile-picture positive" ng-click="profile.updatePicture()">
+    <!--<a class="profile-picture positive" ng-click="profile.showImgCropModal()">-->
       <div ng-if="profile.currentUser.profile.picture">
         <img ng-src="{{ profile.currentUser.profile.picture }}" alt="profile picture">
         edit

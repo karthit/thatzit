@@ -22,12 +22,14 @@ import SettingCtrl from '../controllers/setting.controller';
 import ContactsCtrl from '../controllers/contacts.controller'
 import RequestedCtrl from '../controllers/requested.controller';
 import RequestsCtrl from '../controllers/requests.controller';
+import ImgcropCtrl from '../controllers/imgcrop.controller';
 import InputDirective from '../directives/input.directive';
 import CalendarFilter from '../filters/calendar.filter';
 import ChatNameFilter from '../filters/chat-name.filter';
 import ChatPictureFilter from '../filters/chat-picture.filter';
 import NewChatPictureFilter from '../filters/new-chat.filter';
 import NewChatService from '../services/new-chat.service';
+import ImgcropService from '../services/imgcrop.service';
 import Routes from '../routes';
 
 const App = 'ThatzIt';
@@ -52,12 +54,14 @@ new Loader(App)
   .load(ContactsCtrl)
   .load(RequestedCtrl)
   .load(RequestsCtrl)
+  .load(ImgcropCtrl)
   .load(InputDirective)
   .load(CalendarFilter)
   .load(ChatNameFilter)
   .load(ChatPictureFilter)
   .load(NewChatPictureFilter)
   .load(NewChatService)  
+  .load(ImgcropService)
   .load(Routes);
 
 // Startup
